@@ -30,12 +30,33 @@
     <h1>首页</h1>
     <div>
       <a href="components/hello-html.html">第一节 Hello HTML</a>
+      <button>点击</button>
     </div>
   </div>
   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.js"></script>
   <script>
     document.write("Hello World!")
+    var btn = document.getElementsByTagName('button')[0]
+		var userAgent = navigator.userAgent
+		alert(userAgent)
+		var isChrome = userAgent.indexOf("QQ") > -1
+
+		btn.onclick=function MyBrowser(){
+			
+			if (isChrome) {
+				console.log('Chrome')
+        return "Chrome"
+    	};
+	    if (userAgent.indexOf("QQ") > -1) {
+	    	console.log('微信')
+	      return "QQ";
+	    };
+	    if (userAgent.indexOf("aplipay") > -1) {
+	    	console.log('支付宝')
+	    	return "aplipay";
+	    }
+		}
   </script>
   <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
 </body>
